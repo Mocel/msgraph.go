@@ -1232,21 +1232,21 @@ func (r *WindowsUpdateStateRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// WindowsUpdateswindowsRequestBuilder is request builder for WindowsUpdateswindows
-type WindowsUpdateswindowsRequestBuilder struct{ BaseRequestBuilder }
+// WindowsUpdatesWindowsRequestBuilder is request builder for WindowsUpdatesWindows
+type WindowsUpdatesWindowsRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns WindowsUpdateswindowsRequest
-func (b *WindowsUpdateswindowsRequestBuilder) Request() *WindowsUpdateswindowsRequest {
-	return &WindowsUpdateswindowsRequest{
+// Request returns WindowsUpdatesWindowsRequest
+func (b *WindowsUpdatesWindowsRequestBuilder) Request() *WindowsUpdatesWindowsRequest {
+	return &WindowsUpdatesWindowsRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// WindowsUpdateswindowsRequest is request for WindowsUpdateswindows
-type WindowsUpdateswindowsRequest struct{ BaseRequest }
+// WindowsUpdatesWindowsRequest is request for WindowsUpdatesWindows
+type WindowsUpdatesWindowsRequest struct{ BaseRequest }
 
-// Get performs GET request for WindowsUpdateswindows
-func (r *WindowsUpdateswindowsRequest) Get(ctx context.Context) (resObj *WindowsUpdateswindows, err error) {
+// Get performs GET request for WindowsUpdatesWindows
+func (r *WindowsUpdatesWindowsRequest) Get(ctx context.Context) (resObj *WindowsUpdatesWindows, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -1255,13 +1255,13 @@ func (r *WindowsUpdateswindowsRequest) Get(ctx context.Context) (resObj *Windows
 	return
 }
 
-// Update performs PATCH request for WindowsUpdateswindows
-func (r *WindowsUpdateswindowsRequest) Update(ctx context.Context, reqObj *WindowsUpdateswindows) error {
+// Update performs PATCH request for WindowsUpdatesWindows
+func (r *WindowsUpdatesWindowsRequest) Update(ctx context.Context, reqObj *WindowsUpdatesWindows) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for WindowsUpdateswindows
-func (r *WindowsUpdateswindowsRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for WindowsUpdatesWindows
+func (r *WindowsUpdatesWindowsRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

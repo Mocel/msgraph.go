@@ -43,35 +43,35 @@ type CloudPcUserSettingAssignRequestParameter struct {
 	Assignments []CloudPcUserSettingAssignment `json:"assignments,omitempty"`
 }
 
-// CallRecords returns request builder for CallRecordscallRecord collection
+// CallRecords returns request builder for CallRecordsCallRecord collection
 func (b *CloudCommunicationsRequestBuilder) CallRecords() *CloudCommunicationsCallRecordsCollectionRequestBuilder {
 	bb := &CloudCommunicationsCallRecordsCollectionRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/callRecords"
 	return bb
 }
 
-// CloudCommunicationsCallRecordsCollectionRequestBuilder is request builder for CallRecordscallRecord collection
+// CloudCommunicationsCallRecordsCollectionRequestBuilder is request builder for CallRecordsCallRecord collection
 type CloudCommunicationsCallRecordsCollectionRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns request for CallRecordscallRecord collection
+// Request returns request for CallRecordsCallRecord collection
 func (b *CloudCommunicationsCallRecordsCollectionRequestBuilder) Request() *CloudCommunicationsCallRecordsCollectionRequest {
 	return &CloudCommunicationsCallRecordsCollectionRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ID returns request builder for CallRecordscallRecord item
-func (b *CloudCommunicationsCallRecordsCollectionRequestBuilder) ID(id string) *CallRecordscallRecordRequestBuilder {
-	bb := &CallRecordscallRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+// ID returns request builder for CallRecordsCallRecord item
+func (b *CloudCommunicationsCallRecordsCollectionRequestBuilder) ID(id string) *CallRecordsCallRecordRequestBuilder {
+	bb := &CallRecordsCallRecordRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/" + id
 	return bb
 }
 
-// CloudCommunicationsCallRecordsCollectionRequest is request for CallRecordscallRecord collection
+// CloudCommunicationsCallRecordsCollectionRequest is request for CallRecordsCallRecord collection
 type CloudCommunicationsCallRecordsCollectionRequest struct{ BaseRequest }
 
-// Paging perfoms paging operation for CallRecordscallRecord collection
-func (r *CloudCommunicationsCallRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CallRecordscallRecord, error) {
+// Paging perfoms paging operation for CallRecordsCallRecord collection
+func (r *CloudCommunicationsCallRecordsCollectionRequest) Paging(ctx context.Context, method, path string, obj interface{}, n int) ([]CallRecordsCallRecord, error) {
 	req, err := r.NewJSONRequest(method, path, obj)
 	if err != nil {
 		return nil, err
@@ -83,7 +83,7 @@ func (r *CloudCommunicationsCallRecordsCollectionRequest) Paging(ctx context.Con
 	if err != nil {
 		return nil, err
 	}
-	var values []CallRecordscallRecord
+	var values []CallRecordsCallRecord
 	for {
 		if res.StatusCode != http.StatusOK {
 			b, _ := ioutil.ReadAll(res.Body)
@@ -97,7 +97,7 @@ func (r *CloudCommunicationsCallRecordsCollectionRequest) Paging(ctx context.Con
 		}
 		var (
 			paging Paging
-			value  []CallRecordscallRecord
+			value  []CallRecordsCallRecord
 		)
 		err := jsonx.NewDecoder(res.Body).Decode(&paging)
 		res.Body.Close()
@@ -126,8 +126,8 @@ func (r *CloudCommunicationsCallRecordsCollectionRequest) Paging(ctx context.Con
 	}
 }
 
-// GetN performs GET request for CallRecordscallRecord collection, max N pages
-func (r *CloudCommunicationsCallRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]CallRecordscallRecord, error) {
+// GetN performs GET request for CallRecordsCallRecord collection, max N pages
+func (r *CloudCommunicationsCallRecordsCollectionRequest) GetN(ctx context.Context, n int) ([]CallRecordsCallRecord, error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -135,13 +135,13 @@ func (r *CloudCommunicationsCallRecordsCollectionRequest) GetN(ctx context.Conte
 	return r.Paging(ctx, "GET", query, nil, n)
 }
 
-// Get performs GET request for CallRecordscallRecord collection
-func (r *CloudCommunicationsCallRecordsCollectionRequest) Get(ctx context.Context) ([]CallRecordscallRecord, error) {
+// Get performs GET request for CallRecordsCallRecord collection
+func (r *CloudCommunicationsCallRecordsCollectionRequest) Get(ctx context.Context) ([]CallRecordsCallRecord, error) {
 	return r.GetN(ctx, 0)
 }
 
-// Add performs POST request for CallRecordscallRecord collection
-func (r *CloudCommunicationsCallRecordsCollectionRequest) Add(ctx context.Context, reqObj *CallRecordscallRecord) (resObj *CallRecordscallRecord, err error) {
+// Add performs POST request for CallRecordsCallRecord collection
+func (r *CloudCommunicationsCallRecordsCollectionRequest) Add(ctx context.Context, reqObj *CallRecordsCallRecord) (resObj *CallRecordsCallRecord, err error) {
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }

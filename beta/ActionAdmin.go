@@ -10,8 +10,8 @@ func (b *AdminRequestBuilder) ServiceAnnouncement() *ServiceAnnouncementRequestB
 }
 
 // Windows is navigation property
-func (b *AdminRequestBuilder) Windows() *WindowsUpdateswindowsRequestBuilder {
-	bb := &WindowsUpdateswindowsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *AdminRequestBuilder) Windows() *WindowsUpdatesWindowsRequestBuilder {
+	bb := &WindowsUpdatesWindowsRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/windows"
 	return bb
 }

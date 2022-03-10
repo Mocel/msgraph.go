@@ -976,8 +976,8 @@ func (r *SiteSitesCollectionRequest) Add(ctx context.Context, reqObj *Site) (res
 }
 
 // TermStore is navigation property
-func (b *SiteRequestBuilder) TermStore() *TermStorestoreRequestBuilder {
-	bb := &TermStorestoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *SiteRequestBuilder) TermStore() *TermStoreStoreRequestBuilder {
+	bb := &TermStoreStoreRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/termStore"
 	return bb
 }

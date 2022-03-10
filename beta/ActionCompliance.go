@@ -3,8 +3,8 @@
 package msgraph
 
 // Ediscovery is navigation property
-func (b *ComplianceRequestBuilder) Ediscovery() *EdiscoveryediscoveryrootRequestBuilder {
-	bb := &EdiscoveryediscoveryrootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *ComplianceRequestBuilder) Ediscovery() *EdiscoveryEdiscoveryrootRequestBuilder {
+	bb := &EdiscoveryEdiscoveryrootRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/ediscovery"
 	return bb
 }

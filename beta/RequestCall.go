@@ -37,21 +37,21 @@ func (r *CallRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// CallRecordscallRecordRequestBuilder is request builder for CallRecordscallRecord
-type CallRecordscallRecordRequestBuilder struct{ BaseRequestBuilder }
+// CallRecordsCallRecordRequestBuilder is request builder for CallRecordsCallRecord
+type CallRecordsCallRecordRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns CallRecordscallRecordRequest
-func (b *CallRecordscallRecordRequestBuilder) Request() *CallRecordscallRecordRequest {
-	return &CallRecordscallRecordRequest{
+// Request returns CallRecordsCallRecordRequest
+func (b *CallRecordsCallRecordRequestBuilder) Request() *CallRecordsCallRecordRequest {
+	return &CallRecordsCallRecordRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// CallRecordscallRecordRequest is request for CallRecordscallRecord
-type CallRecordscallRecordRequest struct{ BaseRequest }
+// CallRecordsCallRecordRequest is request for CallRecordsCallRecord
+type CallRecordsCallRecordRequest struct{ BaseRequest }
 
-// Get performs GET request for CallRecordscallRecord
-func (r *CallRecordscallRecordRequest) Get(ctx context.Context) (resObj *CallRecordscallRecord, err error) {
+// Get performs GET request for CallRecordsCallRecord
+func (r *CallRecordsCallRecordRequest) Get(ctx context.Context) (resObj *CallRecordsCallRecord, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -60,13 +60,13 @@ func (r *CallRecordscallRecordRequest) Get(ctx context.Context) (resObj *CallRec
 	return
 }
 
-// Update performs PATCH request for CallRecordscallRecord
-func (r *CallRecordscallRecordRequest) Update(ctx context.Context, reqObj *CallRecordscallRecord) error {
+// Update performs PATCH request for CallRecordsCallRecord
+func (r *CallRecordsCallRecordRequest) Update(ctx context.Context, reqObj *CallRecordsCallRecord) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for CallRecordscallRecord
-func (r *CallRecordscallRecordRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for CallRecordsCallRecord
+func (r *CallRecordsCallRecordRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

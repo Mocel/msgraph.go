@@ -7,7 +7,7 @@ type TenantRelationship struct {
 	// Object is the base model of TenantRelationship
 	Object
 	// ManagedTenants undocumented
-	ManagedTenants *ManagedTenantsmanagedTenant `json:"managedTenants,omitempty"`
+	ManagedTenants *ManagedTenantsManagedTenant `json:"managedTenants,omitempty"`
 }
 
 // TenantSetupInfo undocumented

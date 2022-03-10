@@ -9,7 +9,7 @@ type Admin struct {
 	// ServiceAnnouncement undocumented
 	ServiceAnnouncement *ServiceAnnouncement `json:"serviceAnnouncement,omitempty"`
 	// Windows undocumented
-	Windows *WindowsUpdateswindows `json:"windows,omitempty"`
+	Windows *WindowsUpdatesWindows `json:"windows,omitempty"`
 }
 
 // AdminConsent Admin consent information.

@@ -763,21 +763,21 @@ func (r *ManagedMobileLobAppRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 
-// ManagedTenantsmanagedTenantRequestBuilder is request builder for ManagedTenantsmanagedTenant
-type ManagedTenantsmanagedTenantRequestBuilder struct{ BaseRequestBuilder }
+// ManagedTenantsManagedTenantRequestBuilder is request builder for ManagedTenantsManagedTenant
+type ManagedTenantsManagedTenantRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns ManagedTenantsmanagedTenantRequest
-func (b *ManagedTenantsmanagedTenantRequestBuilder) Request() *ManagedTenantsmanagedTenantRequest {
-	return &ManagedTenantsmanagedTenantRequest{
+// Request returns ManagedTenantsManagedTenantRequest
+func (b *ManagedTenantsManagedTenantRequestBuilder) Request() *ManagedTenantsManagedTenantRequest {
+	return &ManagedTenantsManagedTenantRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// ManagedTenantsmanagedTenantRequest is request for ManagedTenantsmanagedTenant
-type ManagedTenantsmanagedTenantRequest struct{ BaseRequest }
+// ManagedTenantsManagedTenantRequest is request for ManagedTenantsManagedTenant
+type ManagedTenantsManagedTenantRequest struct{ BaseRequest }
 
-// Get performs GET request for ManagedTenantsmanagedTenant
-func (r *ManagedTenantsmanagedTenantRequest) Get(ctx context.Context) (resObj *ManagedTenantsmanagedTenant, err error) {
+// Get performs GET request for ManagedTenantsManagedTenant
+func (r *ManagedTenantsManagedTenantRequest) Get(ctx context.Context) (resObj *ManagedTenantsManagedTenant, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -786,13 +786,13 @@ func (r *ManagedTenantsmanagedTenantRequest) Get(ctx context.Context) (resObj *M
 	return
 }
 
-// Update performs PATCH request for ManagedTenantsmanagedTenant
-func (r *ManagedTenantsmanagedTenantRequest) Update(ctx context.Context, reqObj *ManagedTenantsmanagedTenant) error {
+// Update performs PATCH request for ManagedTenantsManagedTenant
+func (r *ManagedTenantsManagedTenantRequest) Update(ctx context.Context, reqObj *ManagedTenantsManagedTenant) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for ManagedTenantsmanagedTenant
-func (r *ManagedTenantsmanagedTenantRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for ManagedTenantsManagedTenant
+func (r *ManagedTenantsManagedTenantRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }
 

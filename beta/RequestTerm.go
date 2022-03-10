@@ -4,21 +4,21 @@ package msgraph
 
 import "context"
 
-// TermStorestoreRequestBuilder is request builder for TermStorestore
-type TermStorestoreRequestBuilder struct{ BaseRequestBuilder }
+// TermStoreStoreRequestBuilder is request builder for TermStoreStore
+type TermStoreStoreRequestBuilder struct{ BaseRequestBuilder }
 
-// Request returns TermStorestoreRequest
-func (b *TermStorestoreRequestBuilder) Request() *TermStorestoreRequest {
-	return &TermStorestoreRequest{
+// Request returns TermStoreStoreRequest
+func (b *TermStoreStoreRequestBuilder) Request() *TermStoreStoreRequest {
+	return &TermStoreStoreRequest{
 		BaseRequest: BaseRequest{baseURL: b.baseURL, client: b.client},
 	}
 }
 
-// TermStorestoreRequest is request for TermStorestore
-type TermStorestoreRequest struct{ BaseRequest }
+// TermStoreStoreRequest is request for TermStoreStore
+type TermStoreStoreRequest struct{ BaseRequest }
 
-// Get performs GET request for TermStorestore
-func (r *TermStorestoreRequest) Get(ctx context.Context) (resObj *TermStorestore, err error) {
+// Get performs GET request for TermStoreStore
+func (r *TermStoreStoreRequest) Get(ctx context.Context) (resObj *TermStoreStore, err error) {
 	var query string
 	if r.query != nil {
 		query = "?" + r.query.Encode()
@@ -27,12 +27,12 @@ func (r *TermStorestoreRequest) Get(ctx context.Context) (resObj *TermStorestore
 	return
 }
 
-// Update performs PATCH request for TermStorestore
-func (r *TermStorestoreRequest) Update(ctx context.Context, reqObj *TermStorestore) error {
+// Update performs PATCH request for TermStoreStore
+func (r *TermStoreStoreRequest) Update(ctx context.Context, reqObj *TermStoreStore) error {
 	return r.JSONRequest(ctx, "PATCH", "", reqObj, nil)
 }
 
-// Delete performs DELETE request for TermStorestore
-func (r *TermStorestoreRequest) Delete(ctx context.Context) error {
+// Delete performs DELETE request for TermStoreStore
+func (r *TermStoreStoreRequest) Delete(ctx context.Context) error {
 	return r.JSONRequest(ctx, "DELETE", "", nil, nil)
 }

@@ -54,8 +54,17 @@ func stripNS(t string) (string, bool) {
 }
 
 func formatNS(t string) (string, bool) {
-	t, ok := stripNS(t)
-	return strings.Replace(t, ".", "", -1), ok
+	s, ok := stripNS(t)
+	return strings.Replace(s, ".", "", -1), ok
+}
+
+func formatNSUpper(t string) (string, bool) {
+	s, ok := stripNS(t)
+	arr := strings.Split(s, ".")
+	for i := 0; i < len(arr); i++ {
+		arr[i] = strings.Title(arr[i])
+	}
+	return strings.Join(arr, ""), ok
 }
 
 func exported(n string) string {
@@ -81,7 +90,7 @@ func (g *Generator) SymBaseType(t string) string {
 	if x, ok := g.GetSymTypeMapping(t); ok {
 		return x
 	}
-	if x, ok := formatNS(t); ok {
+	if x, ok := formatNSUpper(t); ok {
 		return exported(x)
 	}
 	if strings.HasPrefix(t, colPrefix) {
@@ -94,7 +103,7 @@ func (g *Generator) SymFromType(t string) string {
 	if x, ok := g.GetSymTypeMapping(t); ok {
 		return x
 	}
-	if x, ok := formatNS(t); ok {
+	if x, ok := formatNSUpper(t); ok {
 		return exported(x)
 	}
 	if strings.HasPrefix(t, colPrefix) {
@@ -110,7 +119,7 @@ func (g *Generator) TypeFromType(t string) string {
 	if x, ok := g.GetSymTypeMapping(t); ok {
 		return ptrType(x)
 	}
-	if x, ok := formatNS(t); ok {
+	if x, ok := formatNSUpper(t); ok {
 		return ptrType(exported(x))
 	}
 	if strings.HasPrefix(t, colPrefix) {

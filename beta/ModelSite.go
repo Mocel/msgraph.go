@@ -39,7 +39,7 @@ type Site struct {
 	// Sites undocumented
 	Sites []Site `json:"sites,omitempty"`
 	// TermStore undocumented
-	TermStore *TermStorestore `json:"termStore,omitempty"`
+	TermStore *TermStoreStore `json:"termStore,omitempty"`
 	// Onenote undocumented
 	Onenote *Onenote `json:"onenote,omitempty"`
 }

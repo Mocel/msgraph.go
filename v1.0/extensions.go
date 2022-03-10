@@ -9,8 +9,11 @@ import (
 	"strings"
 )
 
-// CallRecordscallRecord is undefined in the spec, so we add a simple interface typedef
-type CallRecordscallRecord interface{}
+// CallRecordsCallRecord is undefined in the spec, so we add a simple interface typedef
+type CallRecordsCallRecord interface{}
+
+// ExternalConnectorsExternalConnection is undefined in the spec, so we add a simple interface typedef
+type ExternalConnectorsExternalConnection interface{}
 
 // ItemWithPath returns DriveItemRequestBuilder addressed by relative path
 func (b *DriveItemRequestBuilder) ItemWithPath(path string) *DriveItemRequestBuilder {

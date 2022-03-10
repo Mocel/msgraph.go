@@ -460,6 +460,8 @@ func (g *Generator) Generate() error {
 		out.Close()
 	}
 
+	g.F = nil
+
 	keys = nil
 	for x := range actionTypeMap {
 		keys = append(keys, x)

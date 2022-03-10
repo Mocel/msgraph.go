@@ -3,8 +3,8 @@
 package msgraph
 
 // ManagedTenants is navigation property
-func (b *TenantRelationshipRequestBuilder) ManagedTenants() *ManagedTenantsmanagedTenantRequestBuilder {
-	bb := &ManagedTenantsmanagedTenantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
+func (b *TenantRelationshipRequestBuilder) ManagedTenants() *ManagedTenantsManagedTenantRequestBuilder {
+	bb := &ManagedTenantsManagedTenantRequestBuilder{BaseRequestBuilder: b.BaseRequestBuilder}
 	bb.baseURL += "/managedTenants"
 	return bb
 }

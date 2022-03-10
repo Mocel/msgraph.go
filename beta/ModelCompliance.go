@@ -9,7 +9,7 @@ type Compliance struct {
 	// Object is the base model of Compliance
 	Object
 	// Ediscovery undocumented
-	Ediscovery *Ediscoveryediscoveryroot `json:"ediscovery,omitempty"`
+	Ediscovery *EdiscoveryEdiscoveryroot `json:"ediscovery,omitempty"`
 }
 
 // ComplianceInformation undocumented
