@@ -1,6 +1,7 @@
 {{- $ := . }}
 {{- $x := .X }}
 {{- $y := .Y }}
+{{- $f := .F }}
 {{- $ySymType := $.SymBaseType $y.Type }}
 // {{$y.Sym}} returns request builder for {{$ySymType}} collection
 func (b *{{$x.Sym}}RequestBuilder) {{$y.Sym}}() *{{$x.Sym}}{{$y.Sym}}CollectionRequestBuilder {
@@ -9,6 +10,7 @@ func (b *{{$x.Sym}}RequestBuilder) {{$y.Sym}}() *{{$x.Sym}}{{$y.Sym}}CollectionR
 	return bb
 }
 
+{{ if not $f -}}
 // {{$x.Sym}}{{$y.Sym}}CollectionRequestBuilder is request builder for {{$ySymType}} collection
 type {{$x.Sym}}{{$y.Sym}}CollectionRequestBuilder struct{ BaseRequestBuilder }
 
@@ -104,3 +106,4 @@ func (r *{{$x.Sym}}{{$y.Sym}}CollectionRequest) Add(ctx context.Context, reqObj 
 	err = r.JSONRequest(ctx, "POST", "", reqObj, &resObj)
 	return
 }
+{{ end -}}

@@ -420,6 +420,7 @@ func (g *Generator) Generate() error {
 		keys = append(keys, x)
 	}
 	sort.Strings(keys)
+	typeSet := make([]string, 0)
 	for _, key := range keys {
 		x := entityTypeMap[key]
 		actionRequestBuilderMap[x.Type] = append(actionRequestBuilderMap[x.Type], x.Sym)
@@ -435,13 +436,22 @@ func (g *Generator) Generate() error {
 		for _, y := range x.Navigations {
 			g.Y = y
 			if isCollectionType(y.Type) {
-				actionRequestBuilderMap[y.Type] = append(actionRequestBuilderMap[y.Type], x.Sym+y.Sym+"Collection")
-				err := tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
+				colName := x.Sym + y.Sym + "Collection"
+				g.F = nil
+				for _, s := range typeSet {
+					if s == colName {
+						g.F = true
+						break
+					}
+				}
+				actionRequestBuilderMap[y.Type] = append(actionRequestBuilderMap[y.Type], colName)
+				typeSet = append(typeSet, colName)
+				err = tmpl.ExecuteTemplate(out, "request_collection_navigation.go.tmpl", g)
 				if err != nil {
 					return err
 				}
 			} else {
-				err := tmpl.ExecuteTemplate(out, "request_navigation.go.tmpl", g)
+				err = tmpl.ExecuteTemplate(out, "request_navigation.go.tmpl", g)
 				if err != nil {
 					return err
 				}

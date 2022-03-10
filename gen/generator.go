@@ -5,4 +5,6 @@ type Generator struct {
 	Created               map[string]bool
 	SymTypeMap            map[string]string
 	X, Y, Z               interface{}
+
+	F interface{}
 }
